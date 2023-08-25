@@ -77,7 +77,8 @@ from sklearn.ensemble import RandomForestRegressor
 rforest=RandomForestRegressor()
 rforest_regressor=RandomizedSearchCV(estimator=rforest,param_distributions=random_parameters,scoring="neg_mean_squared_error",n_iter=100,cv=5,verbose=2,random_state=42)
 rforest_regressor.fit(X,y)
-
+# dt = DecisionTreeRegressor()
+# dt.fit(X, y)
 
 pickle.dump(rforest_regressor,open("model.pkl","wb"))
 #y_ann_pred=y_ann_pred.flatten()
